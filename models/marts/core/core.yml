@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: final_transform
+    description: orders fact table
+    columns:
+      - name: order_key
+        description: primary key of the model
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_key
+              severity: warning
