@@ -1,0 +1,16 @@
+version: 2
+sources:
+  - name: tpch
+    description: source tpch data
+    database: ANALYTICS
+    schema: dbt_learn
+    tables:
+      - name: orders
+      - name: customers
+    models:
+  - name: int_order_items
+    columns:
+      - name: custkey
+        tests:
+          - not_null
+          - unique

@@ -1,8 +1,9 @@
 with source as (
 
-    select * from {{ source('source_tables', 'orders') }}
+    select * from {{ source('tpch', 'orders') }}
 
 ),
+
 renamed as (
 
     select
@@ -16,7 +17,7 @@ renamed as (
         o_clerk as clerk_name,
         o_shippriority as ship_priority,
         o_comment as comment
-        sum(o_totalprice) as Total
+
     from source
 
 )
