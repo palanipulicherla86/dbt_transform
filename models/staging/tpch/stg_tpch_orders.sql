@@ -1,7 +1,7 @@
 with source as (
 
     select * from {{ source('tpch', 'orders') }}
-
+ 
 ),
 
 renamed as (

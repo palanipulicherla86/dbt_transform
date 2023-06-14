@@ -9,7 +9,7 @@ sources:
         description: main order tracking table
         loaded_at_field: o_orderdate
         freshness: 
-          warn_after:
+          warn_after: 
             count: 1 
             period: hour
           error_after:
