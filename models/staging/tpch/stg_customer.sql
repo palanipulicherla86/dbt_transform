@@ -4,11 +4,7 @@
     )
 }}
 
-with source as (
-
-    select * from {{ source('tpch', 'customer') }}
-
-),
+{{ ref('customer') }}
 
 renamed as ( 
 
@@ -27,4 +23,4 @@ renamed as (
 
 )
 
-select * from renamed
+
