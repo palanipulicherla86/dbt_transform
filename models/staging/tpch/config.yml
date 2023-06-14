@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: tpch
+    description: source tpch data
+    database: ANALYTICS
+    schema: dbt_learn
+    tables:
+      - name: stg_orders
+      - name: stg_customer
+      

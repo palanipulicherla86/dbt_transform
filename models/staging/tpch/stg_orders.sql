@@ -1,9 +1,15 @@
-
 {{
     config(
-        materialized='table'
+        materialized='ephemeral'
     )
 }}
+with source as (
+
+    select * from {{ source('test', 'orders') }}
+
+),
+
+renamed as ( 
     select
 
         o_orderkey as order_key,
@@ -16,7 +22,10 @@
         o_shippriority as ship_priority,
         o_comment as comment
 
-    from {{ ref('orders') }}
+    from source
+)
+
+select * from renamed
 
 
 
