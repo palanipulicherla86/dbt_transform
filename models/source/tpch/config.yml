@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: test
+    description: source tpch data
+    database: ANALYTICS
+    schema: dbt_learn
+    tables:
+      - name: orders
+      - name: customer
+      - name: lineitem
